@@ -4,13 +4,13 @@ import android.net.Uri
 import android.support.v7.app.AlertDialog
 import android.text.TextUtils
 import android.view.View
-import com.a.WebViewContentFragment
 import com.android.ql.lf.carapp.R
 import com.android.ql.lf.carapp.data.UserInfo
 import com.android.ql.lf.carapp.data.VersionInfo
 import com.android.ql.lf.carapp.present.UserPresent
 import com.android.ql.lf.carapp.ui.activities.FragmentContainerActivity
 import com.android.ql.lf.carapp.ui.fragments.BaseNetWorkingFragment
+import com.android.ql.lf.carapp.ui.fragments.WebViewContentFragment
 import com.android.ql.lf.carapp.utils.*
 import kotlinx.android.synthetic.main.fragment_setting_layout.*
 import org.jetbrains.anko.bundleOf
