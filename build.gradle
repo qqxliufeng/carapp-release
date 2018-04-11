@@ -116,5 +116,4 @@ dependencies {
     implementation 'cn.jiguang.sdk:jcore:1.1.9'
     // 此处以JCore 1.1.9 版本为例。
     implementation files('libs/alipaySdk-20170922.jar')
-    implementation  'com.amap.api:location:latest.integration'
 }

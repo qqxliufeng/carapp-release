@@ -114,7 +114,7 @@ class RequestParamsHelper {
         fun getPersonalServiceParam() = getWithIdParams()
 
         val ACT_APPLY = "apply"
-        fun getApplyParam(type: String, name: String, mpic: ArrayList<String>, sypic: ArrayList<String>, phone: String, address: String, detailAddress:String,num: String, content: String): ApiParams {
+        fun getApplyParam(type: String, name: String, mpic: ArrayList<String>, sypic: ArrayList<String>, phone: String, address: String, detailAddress: String, num: String, content: String): ApiParams {
             val param = getWithIdParams()
             param.addParam("type", type)
             param.addParam("name", name)
@@ -150,7 +150,7 @@ class RequestParamsHelper {
         fun getEnsureMoneyProductParam() = getWithIdParams()
 
         val ACT_EDIT_PERSONAL_SERVICE = "edit_personal_service"
-        fun getEditePersonalServiceParam(sid: String, address: String,detailAddress: String, ppa: String, starttime: String, endtime: String, content: String): ApiParams {
+        fun getEditePersonalServiceParam(sid: String, address: String, detailAddress: String, ppa: String, starttime: String, endtime: String, content: String): ApiParams {
             val param = getWithIdParams()
             param.addParam("sid", sid)
             param.addParam("address", address)
@@ -243,6 +243,18 @@ class RequestParamsHelper {
             return param
         }
 
+        val ACT_VERIFY_SECOND_PW = "verify_second_pw"
+        fun getVerifySecondPw(tel: String, second_pw: String) = getWithIdParams().addParam("tel", tel).addParam("second_pw", second_pw)
+
+        val ACT_SET_SECOND_PW = "set_second_pw"
+        fun getSetSecondPW(tel: String, second_pw: String) = getWithIdParams().addParam("tel", tel).addParam("second_pw", second_pw)
+
+        val ACT_EDIT_SECOND_PW = "edit_second_pw"
+        fun getEditSecondPW(tel: String, old_second_pw: String, new_second_pw: String) =
+                getWithIdParams().addParam("tel", tel).addParam("old_second_pw", old_second_pw).addParam("new_second_pw", new_second_pw)
+
+        val ACT_FORGET_SECOND_PW = "forget_second_pw"
+        fun getForgetSecondPW(tel: String, second_pw: String) = getWithIdParams().addParam("tel", tel).addParam("second_pw", second_pw)
 
         /**              member model  end           **/
 
@@ -337,12 +349,12 @@ class RequestParamsHelper {
         val ACT_PLAY_PIC = "play_pic"
 
         val ACT_EDIT_QORDER_STATUS = "edit_qorder_status"
-        fun getEditQorderStatusParam(oid: String, status: String,code: String,checkCode:String = "") =
+        fun getEditQorderStatusParam(oid: String, status: String, code: String, checkCode: String = "") =
                 getWithIdParams()
                         .addParam("oid", oid)
                         .addParam("status", status)
-                        .addParam("code",code)
-                        .addParam("check_code",checkCode)
+                        .addParam("code", code)
+                        .addParam("check_code", checkCode)
 
         val ACT_QORDER_DETAIL = "qorder_detail"
         fun getOrderDetailParam(oid: String) = getWithIdParams().addParam("oid", oid)
@@ -351,7 +363,7 @@ class RequestParamsHelper {
         fun getQorderDepositParam(oid: String) = getWithIdParams().addParam("oid", oid)
 
         val ACT_ORDER_TIME = "edit_appointment_time"
-        fun getOrderTimeParam(qid: String,appointment_time:String) = getWithIdParams().addParam("qid",qid).addParam("appointment_time",appointment_time)
+        fun getOrderTimeParam(qid: String, appointment_time: String) = getWithIdParams().addParam("qid", qid).addParam("appointment_time", appointment_time)
 
         val ACT_MY_SALE_QORDER = "my_sale_qorder"
         fun getMySaleQorderParam(page: Int) = getWithPageParams(page)
@@ -363,7 +375,6 @@ class RequestParamsHelper {
         val ACT_ABOUT_URL = "${Constants.BASE_IP}view/about.html"
         val ACT_HELP_URL = "${Constants.BASE_IP}view/help.html"
         val ACT_PROTOCOL_URL = "${Constants.BASE_IP}view/t_rules.html?pid=13"
-
 
 
         val ACT_PROVINCE = "province"
