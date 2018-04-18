@@ -214,7 +214,7 @@ class MineApplyMasterInfoSubmitFragment : BaseNetWorkingFragment() {
                         formIdCardImagesList.add(imageJsonArray[it] as String)
                     }
                     mBtMasterInfoSubmit.post {
-                        uploadImage(0x2, idCardImageList, "正在上传营业执照图片……")
+                        uploadImage(0x2, licenceImageList, "正在上传营业执照图片……")
                     }
                 }
             }
