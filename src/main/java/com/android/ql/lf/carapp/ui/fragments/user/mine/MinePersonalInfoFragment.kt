@@ -47,7 +47,11 @@ class MinePersonalInfoFragment : BaseNetWorkingFragment() {
     override fun initView(view: View?) {
         GlideManager.loadFaceCircleImage(mContext, UserInfo.getInstance().memberPic, mTvPersonalInfoFace)
         mTvPersonalInfoNickName.text = UserInfo.getInstance().memberName
-        mTvPersonalInfoPhone.text = UserInfo.getInstance().memberPhone.let { "${it.substring(0, 3)}****${it.substring(7, it.length)}" }
+        if (UserInfo.getInstance().memberPhone!=null && UserInfo.getInstance().memberPhone.length >= 11) {
+            mTvPersonalInfoPhone.text = UserInfo.getInstance().memberPhone.let { "${it.substring(0, 3)}****${it.substring(7, it.length)}" }
+        }else{
+            mTvPersonalInfoPhone.text = "暂无"
+        }
         mTvPersonalInfoIdCard.text = if (!TextUtils.isEmpty(UserInfo.getInstance().memberIdCard)) {
             UserInfo.getInstance().memberIdCard
         } else {
